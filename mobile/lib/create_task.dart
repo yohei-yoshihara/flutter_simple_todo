@@ -42,7 +42,6 @@ class CreateTaskPageState extends State<CreateTaskPage> {
       "localhost:8000",
       "/api/tasks/create",
     );
-    log.info("due_date = ${_dueDate.toUtc().toIso8601String()}");
     String body = jsonEncode({
       "title": _titleController.text,
       "description": _descriptionController.text,
@@ -75,7 +74,7 @@ class CreateTaskPageState extends State<CreateTaskPage> {
       return;
     }
 
-    if (response.statusCode != 200 && mounted) {
+    if (response.statusCode != 200 && context.mounted) {
       Fluttertoast.showToast(
         msg: "タスクの作成に失敗しました",
         toastLength: Toast.LENGTH_SHORT,

@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    log.info("submit");
+    log.info("login request");
     var url = Uri.http("localhost:8000", "/api/login");
 
     String body = jsonEncode({

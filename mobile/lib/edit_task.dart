@@ -30,7 +30,6 @@ class _EditTaskPageState extends State<EditTaskPage> {
 
   @override
   void initState() {
-    log.info("EditPage: initState");
     _titleController.text = widget.task.title;
     _descriptionController.text = widget.task.description;
     _completed = widget.task.completed;
@@ -41,7 +40,6 @@ class _EditTaskPageState extends State<EditTaskPage> {
 
   @override
   void dispose() {
-    log.info("EditPage: dispose");
     _titleController.dispose();
     _descriptionController.dispose();
     super.dispose();

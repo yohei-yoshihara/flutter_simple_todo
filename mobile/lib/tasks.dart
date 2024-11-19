@@ -57,7 +57,7 @@ class _TasksPageState extends State<TasksPage> {
       return;
     }
 
-    if (response.statusCode == 200 && mounted) {
+    if (response.statusCode == 200 && context.mounted) {
       String s = utf8.decode(response.bodyBytes);
       List<dynamic> json = jsonDecode(s);
       List<Task> tasks = [];
